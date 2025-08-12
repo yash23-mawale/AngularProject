@@ -1,5 +1,5 @@
 import { Component, model } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { student } from '../../model/interfaces';
 @Component({
   selector: 'app-signup',
@@ -18,7 +18,20 @@ export class SignupComponent {
   }
  
   onSubmit(){
-    console.log("Form Data",this.student)
-    alert("Form Submitted Successfully!");
+    const isLocalData = localStorage.getItem("Angular18Local");
+    if (isLocalData != null){
+      const localArray = JSON.parse(isLocalData);
+      localArray.push(this.student);
+      localStorage.setItem("Angular18Local",JSON.stringify(localArray));
+
+    }else{
+      const localArray = [];
+      localArray.push(this.student);
+      localStorage.setItem("Angular18Local",JSON.stringify(localArray));
+    }
+    alert("Registraion Success!")
   }
+
+
+
 }

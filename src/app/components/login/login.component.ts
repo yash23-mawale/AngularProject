@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { login } from '../../model/interfaces';
 import { SignupComponent } from '../signup/signup.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,11 +13,26 @@ import { SignupComponent } from '../signup/signup.component';
 })
 export class LoginComponent {
   login:login={
-    username:"",
+    name:"",
     password:'',
   }
 
+  router = inject(Router);
+
   onLogin(){
-    console.log("loginData",this.login);
+    const isLocalData = localStorage.getItem("Angular18Local");
+    if (isLocalData != null){
+      const users = JSON.parse(isLocalData);
+
+
+      const isUserFound = users.find((m:login)=>m.name == this.login.name && m.password == this.login.password)
+      if (isUserFound != undefined){
+        this.router.navigateByUrl("homepage");
+      }else{
+        alert("Username or Password is Wrong");
+      }
+    }else{
+      alert("NO User Found!");
+    }
   }
 }

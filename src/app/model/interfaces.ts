@@ -7,6 +7,6 @@ export interface student{
 }
 
 export interface login{
-    username:string,
+    name:string,
     password:string | number
 }

@@ -8,7 +8,7 @@ import { SignupComponent } from './components/signup/signup.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AdminComponent,StudentComponent,LoginComponent,SignupComponent,RouterModule],
+  imports: [RouterOutlet,RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
