@@ -9,4 +9,5 @@ export interface student{
 export interface login{
     name:string,
     password:string | number
+    role:string
 }
