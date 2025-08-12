@@ -12,7 +12,7 @@ import { login } from '../../model/interfaces';
 export class LoginComponent {
   login:login={
     username:"",
-    password:0,
+    password:"",
   }
 
   onLogin(){
