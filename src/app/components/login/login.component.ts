@@ -26,9 +26,14 @@ export class LoginComponent {
       const users = JSON.parse(isLocalData);
 
 
-      const isUserFound = users.find((m:login)=>m.name == this.login.name && m.password == this.login.password)
+      const isUserFound = users.find((m:login)=>m.name == this.login.name && m.password == this.login.password && m.role == this.login.role)
       if (isUserFound != undefined){
-        this.router.navigateByUrl("homepage");
+        if(this.login.role == 'student')
+          this.router.navigateByUrl("student");
+        else if(this.login.role == 'admin')
+          this.router.navigateByUrl("admin");
+        else if(this.login.role == 'teacher')
+          this.router.navigateByUrl("teacher");
       }else{
         alert("Username or Password is Wrong");
       }
