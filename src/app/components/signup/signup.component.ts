@@ -11,8 +11,6 @@ import { SignupService } from '../../services/signup.service';
 })
 export class SignupComponent {
 
-// http :SignupService = inject(SignupService)
-
   student:student={
     name:"",
     email:"",
