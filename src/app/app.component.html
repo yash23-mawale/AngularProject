@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/homepage">MyApp</a>
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+=======
 <div class="row">
   <div class="col-4">
     <a routerLink="/homepage">homepage</a><br>
@@ -7,5 +23,28 @@
     <a routerLink="/student">student</a><br>
   </div>
 </div>
+>>>>>>> 9ae1a3a8e6fd4fad0839c47b690364f4927f8232
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/homepage" routerLinkActive="active">Homepage</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin" routerLinkActive="active">Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/signup" routerLinkActive="active">Signup</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/student" routerLinkActive="active">Student</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <router-outlet></router-outlet>
