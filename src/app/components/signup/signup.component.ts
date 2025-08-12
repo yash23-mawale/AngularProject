@@ -18,7 +18,7 @@ export class SignupComponent {
   }
  
   onSubmit(){
-    console.log("Form Data",model)
+    console.log("Form Data",this.student)
     alert("Form Submitted Successfully!");
   }
 }
