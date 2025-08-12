@@ -12,11 +12,7 @@ import { login } from '../../model/interfaces';
 export class LoginComponent {
   login:login={
     username:"",
-<<<<<<< HEAD
-    password:"",
-=======
     password:'',
->>>>>>> 02ab7736f3a6dca701fba6327fce6fbd574ea7cb
   }
 
   onLogin(){
