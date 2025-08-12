@@ -28,11 +28,13 @@ export class LoginComponent {
 
       const isUserFound = users.find((m:login)=>m.name == this.login.name && m.password == this.login.password && m.role == this.login.role)
       if (isUserFound != undefined){
-        if(this.login.role == 'student')
+        console.log("yash")
+        console.log(this.login.role)
+        if(this.login.role == 'Student')
           this.router.navigateByUrl("student");
         else if(this.login.role == 'admin')
-          this.router.navigateByUrl("admin");
-        else if(this.login.role == 'teacher')
+          this.router.navigateByUrl("Admin");
+        else if(this.login.role == 'Teacher')
           this.router.navigateByUrl("teacher");
       }else{
         alert("Username or Password is Wrong");
