@@ -19,7 +19,7 @@ export class SignupComponent {
     phone:null
   }
  
-  onSubmit(){
+  onSubmit(form:NgForm){
     const isLocalData = localStorage.getItem("Angular18Local");
     if (isLocalData != null){
       const localArray = JSON.parse(isLocalData);
@@ -30,8 +30,10 @@ export class SignupComponent {
       const localArray = [];
       localArray.push(this.student);
       localStorage.setItem("Angular18Local",JSON.stringify(localArray));
+      
     }
     alert("Registraion Success!")
+    form.resetForm();
   }
 
 
