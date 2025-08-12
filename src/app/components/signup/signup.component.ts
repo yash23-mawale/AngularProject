@@ -12,7 +12,7 @@ export class SignupComponent {
   student:student={
     name:"",
     email:"",
-    password:0,
+    password:"",
     role:"",
     phone:0
   }

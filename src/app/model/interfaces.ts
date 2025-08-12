@@ -1,7 +1,7 @@
 export interface student{
     name:string,
     email:string,
-    password:number,
+    password:number | string,
     phone:number,
     role:string
 }
