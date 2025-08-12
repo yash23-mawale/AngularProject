@@ -14,7 +14,7 @@ export class SignupComponent {
     email:"",
     password:"",
     role:"",
-    phone:0
+    phone:null
   }
  
   onSubmit(){
