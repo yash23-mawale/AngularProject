@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <div class="card mx-auto" style="max-width: 600px;">
+  <div class="card mx-auto" style="max-width: 400px;">
     <div class="card-body">
       <h4 class="card-title text-center mb-4">Registration Form</h4>
 
@@ -36,7 +36,7 @@
         <!-- phone -->
         <div class="mb-3">
           <label class="form-label">Phone</label>
-          <textarea class="form-control" rows="3" [(ngModel)]="student.phone" name="phone"></textarea>
+          <input class="form-control" placeholder="Enter your phone no" minlength="10" maxlength="10" [(ngModel)]="student.phone" name="phone">
         </div>
 
         <button type="submit" class="btn btn-primary w-100">Register</button>
