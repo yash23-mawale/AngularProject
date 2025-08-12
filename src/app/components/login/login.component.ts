@@ -26,22 +26,17 @@ export class LoginComponent {
     if (isLocalData != null) {
       const users = JSON.parse(isLocalData);
 
-      const isUserFound = users.find(
-        (m: login) =>
-          m.name == this.login.name &&
-          m.password == this.login.password &&
-          m.role == this.login.role
-      );
-      if (isUserFound != undefined) {
-        if (this.login.role === 'Student') {
-          this.router.navigate(['/student']);
-        } else if (this.login.role === 'Admin') {
-          this.router.navigate(['/admin']);
-        } else if (this.login.role === 'Teacher') {
-          this.router.navigate(['/teacher']);
-        }
-      } else {
-        alert('Username or Password  or role is Wrong');
+
+      const isUserFound = users.find((m:login)=>m.name == this.login.name && m.password == this.login.password && m.role == this.login.role)
+      if (isUserFound != undefined){
+        if(this.login.role == 'Student')
+          this.router.navigateByUrl("student");
+        else if(this.login.role == 'admin')
+          this.router.navigateByUrl("Admin");
+        else if(this.login.role == 'Teacher')
+          this.router.navigateByUrl("teacher");
+      }else{
+        alert("Username or Password or role is Wrong");
       }
     } else {
       alert('NO User Found!');
