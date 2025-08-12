@@ -7,33 +7,44 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule,SignupComponent],
+  imports: [FormsModule, SignupComponent],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  login:login={
-    name:"",
-    password:'',
-    role:''
-  }
+  login: login = {
+    name: '',
+    password: '',
+    role: '',
+  };
 
   router = inject(Router);
 
-  onLogin(){
-    const isLocalData = localStorage.getItem("Angular18Local");
-    if (isLocalData != null){
+  onLogin() {
+    const isLocalData = localStorage.getItem('Angular18Local');
+    console.log(this.login);
+    if (isLocalData != null) {
       const users = JSON.parse(isLocalData);
 
-
-      const isUserFound = users.find((m:login)=>m.name == this.login.name && m.password == this.login.password)
-      if (isUserFound != undefined){
-        this.router.navigateByUrl("homepage");
-      }else{
-        alert("Username or Password is Wrong");
+      const isUserFound = users.find(
+        (m: login) =>
+          m.name == this.login.name &&
+          m.password == this.login.password &&
+          m.role == this.login.role
+      );
+      if (isUserFound != undefined) {
+        if (this.login.role === 'Student') {
+          this.router.navigate(['/student']);
+        } else if (this.login.role === 'Admin') {
+          this.router.navigate(['/admin']);
+        } else if (this.login.role === 'Teacher') {
+          this.router.navigate(['/teacher']);
+        }
+      } else {
+        alert('Username or Password  or role is Wrong');
       }
-    }else{
-      alert("NO User Found!");
+    } else {
+      alert('NO User Found!');
     }
   }
 }
