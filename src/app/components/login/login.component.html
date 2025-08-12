@@ -1,1 +1,17 @@
-<p>login works!</p>
+<!-- login.component.html -->
+<div class="container">
+  <h2>Login</h2>
+  <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+    <div>
+      <label>Username:</label>
+      <input type="text" name="username" [(ngModel)]="login.username" required>
+    </div>
+
+    <div>
+      <label>Password:</label>
+      <input type="password" name="password" [(ngModel)]="login.password" required>
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+  </form>
+</div>

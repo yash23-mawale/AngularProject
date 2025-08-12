@@ -5,3 +5,8 @@ export interface student{
     phone:number,
     role:string
 }
+
+export interface login{
+    username:string,
+    password:string | number
+}
