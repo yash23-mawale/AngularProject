@@ -1,6 +1,7 @@
 import { Component, model } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { student } from '../../model/interfaces';
+import { SignupService } from '../../services/signup.service';
 @Component({
   selector: 'app-signup',
   standalone: true,
@@ -9,6 +10,9 @@ import { student } from '../../model/interfaces';
   styleUrl: './signup.component.css'
 })
 export class SignupComponent {
+
+// http :SignupService = inject(SignupService)
+
   student:student={
     name:"",
     email:"",
