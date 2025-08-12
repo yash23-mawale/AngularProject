@@ -7,6 +7,7 @@ import { StudentComponent } from './components/student/student.component';
 import { LogoutComponent } from './components/logout/logout.component';
 
 export const routes: Routes = [
+<<<<<<< HEAD
 
     {
         path:'',
@@ -38,4 +39,35 @@ export const routes: Routes = [
         component:LogoutComponent
     }
 
+=======
+  {
+    path: '',
+    redirectTo: 'homepage',
+    pathMatch: 'full',
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
+  },
+  {
+    path: 'homepage',
+    component: HomepageComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
+  },
+  {
+    path: 'student',
+    component: StudentComponent,
+  },
+  {
+    path:'logout',
+    component:LogoutComponent
+  }
+>>>>>>> a478b1137801d18697584cbdd58cfa98c0d9c3d1
 ];

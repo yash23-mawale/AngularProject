@@ -9,7 +9,11 @@ import { LogoutComponent } from './components/logout/logout.component';
 @Component({
   selector: 'app-root',
   standalone: true,
+<<<<<<< HEAD
   imports: [RouterOutlet, AdminComponent,StudentComponent,LoginComponent,SignupComponent,LogoutComponent,RouterModule],
+=======
+  imports: [RouterOutlet,RouterModule],
+>>>>>>> a478b1137801d18697584cbdd58cfa98c0d9c3d1
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
